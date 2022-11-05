@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./index.css" rel="stylesheet">
+    <title>BMI</title>
+</head>
+<body>
+    <div id="main">
+        <form>
+            <label>Age</label>
+            <input type="text" id="age">
+            <label>age : 2 - 120</label><span id="ageError">Invalid Input</span><br>
+            <label>Gender</label>
+            <input type="radio" value="Male" class="gender" name="gender" id="male">
+            <label>Male</label>
+            <input type="radio" value="Female" class="gender" name="gender" id="female">
+            <label>Female</label><br>
+            <label>Height</label>
+            <input type="text" id="height" placeholder="cm"><span id="heightError">Invalid Input</span><br>
+            <label>Weight</label>
+            <input type="text" id="weight" placeholder="Kg"><span id="weightError">Invalid Input</span><br>
+            <button type="button" id="calculate">Calculate</button>
+            <button type="button" id="clear">clear</button>
+        </form>
+        <div id="display"></div>
+    </div>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
