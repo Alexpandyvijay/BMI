@@ -50,27 +50,31 @@ calculate.addEventListener('click', function(e){
         }else if(isNaN(object.weight)){
             weightError.style.visibility = "visible";
         }else{
-            let BMI = object.weight/((object.height/100)**2);
-            if(BMI <=16){
-                display.innerText= 'Severe thinness';
-            }else if(BMI >16 && BMI <=17){
-                display.innerText = 'Moderate thinness';
-            }else if(BMI >17 && BMI <=18.5){
-                display.innerText = 'Mild thinness';
-            }else if(BMI >18.5 && BMI <=25){
-                display.innerText = 'Normal';
-            }else if(BMI >25 && BMI <=30){
-                display.innerText = 'Over weight';
-            }else if(BMI >30 && BMI <=35){
-                display.innerText = 'Obese class I';
-            }else if(BMI >35 && BMI <=40){
-                display.innerText = 'Obese class II';
-            }else if(BMI > 40){
-                display.innerText = 'Obese class II'
+            if(object.age<2 || object.age>120){
+                ageError.style.visibility = "visible"
+            }else{
+                let BMI = object.weight/((object.height/100)**2);
+                if(BMI <=16){
+                    display.innerText= 'Severe thinness ' + "BMI " + BMI + " Kg/m2";
+                }else if(BMI >16 && BMI <=17){
+                    display.innerText = 'Moderate thinness '+ "BMI " + BMI + " Kg/m2";
+                }else if(BMI >17 && BMI <=18.5){
+                    display.innerText = 'Mild thinness '+ "BMI " + BMI + " Kg/m2";
+                }else if(BMI >18.5 && BMI <=25){
+                    display.innerText = 'Normal '+ "BMI " + BMI + " Kg/m2";
+                }else if(BMI >25 && BMI <=30){
+                    display.innerText = 'Over weight '+ "BMI " + BMI + " Kg/m2";
+                }else if(BMI >30 && BMI <=35){
+                    display.innerText = 'Obese class I '+ "BMI " + BMI + " Kg/m2";
+                }else if(BMI >35 && BMI <=40){
+                    display.innerText = 'Obese class II '+ "BMI " + BMI + " Kg/m2";
+                }else if(BMI > 40){
+                    display.innerText = 'Obese class II '+ "BMI " + BMI + " Kg/m2";
+                }
+                ageError.style.visibility = "hidden";
+                weightError.style.visibility = "hidden";
+                heightError.style.visibility = "hidden";
             }
-            ageError.style.visibility = "hidden";
-            weightError.style.visibility = "hidden";
-            heightError.style.visibility = "hidden";
         }
     }else{
         alert('all fields are mandatory')
