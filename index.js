@@ -54,22 +54,23 @@ calculate.addEventListener('click', function(e){
                 ageError.style.visibility = "visible"
             }else{
                 let BMI = object.weight/((object.height/100)**2);
+                BMI = BMI.toFixed(2);
                 if(BMI <=16){
-                    display.innerText= 'Severe thinness ' + "BMI " + BMI + " Kg/m2";
+                    display.innerHTML= `Severe thinness BMI = ${BMI} Kg/m2`;
                 }else if(BMI >16 && BMI <=17){
-                    display.innerText = 'Moderate thinness '+ "BMI " + BMI + " Kg/m2";
+                    display.innerHTML = `Moderate thinness BMI = ${BMI} Kg/m2`;
                 }else if(BMI >17 && BMI <=18.5){
-                    display.innerText = 'Mild thinness '+ "BMI " + BMI + " Kg/m2";
+                    display.innerHTML = `Mild thinness BMI = ${BMI} Kg/m2`;
                 }else if(BMI >18.5 && BMI <=25){
-                    display.innerText = 'Normal '+ "BMI " + BMI + " Kg/m2";
+                    display.innerHTML = `Normal BMI = ${BMI} Kg/m2`;
                 }else if(BMI >25 && BMI <=30){
-                    display.innerText = 'Over weight '+ "BMI " + BMI + " Kg/m2";
+                    display.innerHTML = `Over weight BMI = ${BMI} Kg/m2`;
                 }else if(BMI >30 && BMI <=35){
-                    display.innerText = 'Obese class I '+ "BMI " + BMI + " Kg/m2";
+                    display.innerHTML = `Obese class I BMI = ${BMI} Kg/m2`;
                 }else if(BMI >35 && BMI <=40){
-                    display.innerText = 'Obese class II '+ "BMI " + BMI + " Kg/m2";
+                    display.innerHTML = `Obese class II BMI = ${BMI} Kg/m2`;
                 }else if(BMI > 40){
-                    display.innerText = 'Obese class II '+ "BMI " + BMI + " Kg/m2";
+                    display.innerHTML = `Obese class II BMI = ${BMI} Kg/m2`;
                 }
                 ageError.style.visibility = "hidden";
                 weightError.style.visibility = "hidden";
@@ -82,7 +83,7 @@ calculate.addEventListener('click', function(e){
 })
 clr.addEventListener('click', function() {
     form.reset();
-    display.innerText = '';
+    display.innerHTML = '';
     ageError.style.visibility = "hidden";
     weightError.style.visibility = "hidden";
     heightError.style.visibility = "hidden";
